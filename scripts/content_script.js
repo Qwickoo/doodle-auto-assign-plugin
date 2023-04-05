@@ -66,8 +66,6 @@ function fillSessions(sessions, participants) {
     })
     .map(entry => entry[0]);
 
-  // todo random for same availabilities
-
   // Fill sessions
   for (let participant of participantsByQuantityAvailable) {
     for (let i = 0; i < sessions.length; i++) {
@@ -98,7 +96,7 @@ async function removeAds() {
 
 function buildBody(sessions, sessionNames) {
     return sessions
-        .map((session, i) => "<div>" + sessionNames[i] + " : " + session.join(',') + "</div>");
+        .map((session, i) => "<div>" + sessionNames[i] + " : " + session.join(', ') + "</div>");
 }
 
 applicationTableLoaded()
@@ -112,7 +110,7 @@ applicationTableLoaded()
         document.querySelector('.OpenStatePageContent__details').insertAdjacentHTML(
             "afterend",
             "<style>" +
-            "#show-sessions { width: 100%; background-color: white; padding: var(--space-3x);" +
+            "#show-sessions { width: 100%; background-color : white; padding: var(--space-3x);" +
             "border-left: 1px solid var(--color-neutral-300); border-right: 1px solid var(--color-neutral-300)}" +
             "</style>" +
             "<div id='show-sessions'><div class='Button Button--blue'>Show me sessions !</div></div>"
