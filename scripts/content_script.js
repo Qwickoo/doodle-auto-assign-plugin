@@ -96,7 +96,7 @@ async function removeAds() {
 
 function buildBody(sessions, sessionNames) {
     return sessions
-        .map((session, i) => "<div>" + sessionNames[i] + " : " + session.join(', ') + "</div>");
+        .map((session, i) => "<div>" + sessionNames[i] + " : " + session.join(', ') + "</div><br />");
 }
 
 applicationTableLoaded()
